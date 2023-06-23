@@ -3,6 +3,7 @@ import ToDoList from "./ToDoList.tsx";
 
 type Props = {
    todos: Todo[]
+    loadTodos: () => void
 }
 export default function StatusList(props: Props) {
     const todos= props.todos
@@ -13,11 +14,11 @@ export default function StatusList(props: Props) {
     return(
         <>
             <h2>Open</h2>
-            <ToDoList todos={listWithStatusOpen}/>
+            <ToDoList loadTodos={props.loadTodos} todos={listWithStatusOpen}/>
             <h2>Doing</h2>
-            <ToDoList todos={listWithStatusDoing}/>
+            <ToDoList loadTodos={props.loadTodos} todos={listWithStatusDoing}/>
             <h2>Done</h2>
-            <ToDoList todos={listWithStatusDone}/>
+            <ToDoList loadTodos={props.loadTodos} todos={listWithStatusDone}/>
         </>
 
     )

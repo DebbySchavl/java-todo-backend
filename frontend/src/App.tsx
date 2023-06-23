@@ -5,6 +5,7 @@ import StatusList from "./StatusList.tsx";
 import Form from "./Form.tsx";
 
 
+
 export default function App() {
     const[todos, setTodos] = useState([])
 
@@ -20,8 +21,9 @@ export default function App() {
     return (
         <>
             <h3>ToDos</h3>
-            <StatusList todos={todos} />
-            <Form />
+
+            <StatusList loadTodos={loadTodos} todos={todos} />
+            <Form loadTodos={loadTodos}/>
         </>
     )
 
